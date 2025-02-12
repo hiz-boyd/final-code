@@ -1,0 +1,791 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*investment*/
+
+@media (max-width: 768px) {
+  #investment {
+    padding-left: 20px; /* Add left padding */
+    padding-right: 20px; /* Add right padding */
+  }
+}
+
+
+
+/* Header Fixes */
+.hidden {
+  display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+#menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#mobile-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 999;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 60px); /* Full height minus header */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+#mobile-menu.show {
+  display: block; /* Show when toggled */
+}
+
+#mobile-menu a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+#mobile-menu a:hover {
+  background-color: #f9f9f9;
+}
+
+/* Toggle Icons */
+#menu-icon {
+  display: block; /* Show menu icon by default */
+}
+
+#close-icon {
+  display: none; /* Hide close icon by default */
+}
+
+#menu-toggle.active #menu-icon {
+  display: none; /* Hide menu icon when active */
+}
+
+#menu-toggle.active #close-icon {
+  display: block; /* Show close icon when active */
+}
+
+
+
+
+
+
+
+
+
+
+/* Styling for the main slideshow */
+#main-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Full viewport height */
+  overflow: hidden;
+}
+
+
+
+
+.background-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling for the Swiper container */
+/* Adjust the position of the text and button */
+  /* Styling for the main slideshow */
+/* Styling for the main slideshow */
+/* Styling for the main slideshow */
+#main-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.background-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling for the Swiper container */
+.swiper-container {
+  margin-top: 0; /* Remove the top margin */
+  position: absolute;
+  top: 0; /* Keep the container at the top */
+  right: 0; /* Keep the container on the right */
+  width: 50%; /* Take half the width of the screen */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Vertically arrange text */
+  align-items: flex-start; /* Align content to the left of the container */
+  justify-content: flex-start; /* Align content to the top */
+  text-align: left; /* Align text to the left */
+  z-index: 1; /* Ensure it is on top of the background image */
+  padding: 30px;
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the text to the left */
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-top: 70px; /* Bring the text and buttons down a bit */
+}
+
+h1.fw-bold {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #070337 0%, #FF1014 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+p {
+  padding: 10px;
+}
+
+p.zoe {
+  font-size: 1.5rem;
+}
+
+p.leo {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #814444;
+}
+
+p.lead {
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+/* Styling for Button Group */
+.btn-group {
+  display: flex;
+  gap: 20px; /* Space between the buttons */
+  margin-top: 30px; /* Optional: Add space above the buttons */
+}
+
+a.btn2 {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  text-align: center;
+}
+
+/* Register Button */
+a.btn2.register {
+  background-color: #ff5733; /* A bright color for the button */
+  color: white;
+}
+
+a.btn2.register:hover {
+  background-color: #e74c3c;
+}
+
+/* Sign In Button */
+a.btn2.sign-in {
+  background-color: #FF1014; /* Blue color for Sign In */
+  color: white;
+}
+
+a.btn2.sign-in:hover {
+  background-color: #fa7375;
+}
+
+i.ri-flashlight-line {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .swiper-slide {
+    margin-top: -10px; /* Bring the text and buttons down further for mobile */
+  }
+
+  h1.fw-bold {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  p.zoe {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+
+  p.leo {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .btn-group {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 10px; /* Reduce space between buttons */
+  }
+
+  a.btn2 {
+    width: 100%; /* Full-width buttons on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  /* Adjust header content on small screens */
+  .header {
+    position: fixed; /* Make sure the header is fixed on mobile */
+    z-index: 100; /* Ensure the header stays on top */
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h1.fw-bold {
+    font-size: 2.5rem;
+  }
+
+  p.lead {
+    font-size: 1rem;
+  }
+
+  a.btn2 {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  #main-slideshow {
+    margin-top: 80px; /* Add space for the fixed header on mobile */
+  }
+
+  /* Ensure mobile menu is hidden by default */
+  #mobile-menu {
+    display: none;
+  }
+
+  #mobile-menu.show {
+    display: block;
+  }
+}
+/*--------section--------*/
+
+.body {
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 70px 0;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 20px;
+  color: #000;
+  margin-bottom: 25px;
+}
+.niac{
+  gap: 40px;
+}
+.plan > div {
+
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+.plan.sign-in {
+  color: #ff0000;
+}
+.beginners {
+  background: linear-gradient(to right, #e6e6e6, #ffffff);
+}
+.elite {
+  background: linear-gradient(to right, #ccddee, #e6f0ff);
+}
+.ambassador {
+  background: linear-gradient(to right, #f7f6c4, #ffffe0);
+}
+.executive {
+  background: linear-gradient(to right, #f5ccf0, #ffebff);
+}
+.prime {
+  background: linear-gradient(to right, #c8f7c5, #e0ffe0);
+}
+.button {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  margin-left: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+ /* Mobile view */
+ @media (max-width: 768px) {
+  h1 {
+    font-size: 1.3rem; /* Smaller title */
+    margin-bottom: 15px;
+  }
+
+  .niac {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Increased gap between plans */
+  }
+
+  .plan {
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .plan > div {
+    font-size: 0.9rem; /* Reduced font size for better fit */
+    margin-bottom: 8px;
+  }
+
+  .button {
+    padding: 8px 20px; /* Smaller buttons */
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .niac {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1025px) {
+  .niac {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Five columns */
+  }
+}
+
+
+.flee i {
+  color: #FFFF0C;
+}
+.flee h1 {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3.5vw, 2rem); /* Smaller responsive font size */
+  text-align: center;
+  margin: 0; /* Removes extra margin */
+}
+.choba {
+  margin-top: 30px; /* Reduced top margin */
+  max-width: 800px; /* Narrower max width for tighter layout */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px; /* Minimal padding for content */
+  box-sizing: border-box;
+}
+
+.fahi {
+  margin-top: 30px; /* Reduced vertical spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Smaller gap between images */
+  transform: scale(1); /* No extra scaling for compact fit */
+  flex-wrap: wrap;
+}
+
+.fahi img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titi img {
+  width: clamp(200px, 30vw, 350px); /* Increased maximum width */
+  height: clamp(200px, 30vw, 350px); /* Maintains circular shape */
+}
+
+.tolu img {
+  width: clamp(150px, 20vw, 220px); /* Increased size for smaller image */
+  height: clamp(150px, 20vw, 220px); /* Keeps aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .fahi {
+    gap: 0.8rem; /* Tighter gap for smaller screens */
+  }
+  
+  .flee h1 {
+    font-size: clamp(1rem, 3vw, 1.8rem); /* Smaller font for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .fahi {
+    gap: 1rem; /* Adjust gap for larger images */
+  }
+}
+
+@media (max-width: 480px) {
+  .fahi img {
+    width: 85%; /* Slightly larger for small screens */
+    height: auto;
+  }
+}
+
+
+/* Add this CSS to your stylesheet */
+select {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #4f46e5 #d9d9d9; /* For Firefox */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: #9a96f0;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+select {
+  appearance: none;
+  width: 100%;
+  max-width: 400px;
+  height: 7vh;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  background-color: #d9d9d9;
+  border: 2px solid #d1d5db;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #1f2937;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234f46e5"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5em;
+}
+
+select:hover {
+  border-color: #4f46e5;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  select {
+      background-color: #2d2d2d;
+      color: #ffffff;
+      border-color: #4f46e5;
+  }
+
+  select:hover {
+      border-color: #818cf8;
+  }
+
+  select:focus {
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.3);
+  }
+}
+
+
+
+/* Apply hover and focus styles to all input fields and select dropdown */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover,
+select:hover {
+    border-color: #4f46e5; /* Change border color on hover */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Add a focus ring */
+    border-color: #4f46e5; /* Change border color on focus */
+}
+
+
+
+
+ /* Spin Animation */
+ @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hidden Utility */
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+.hidden {
+  display: none;
+}
+
+#menu-listss {
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#menu-listss ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-listss li button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#menu-listss li button:hover {
+  background-color: #f3f4f6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.jaza{
+  padding: 10px 20px;
+  background-color: #1c25cd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.jaga:hover{
+  background-color: darkgoldenrod;
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+@media (max-width: 768px) {
+  /* Adjust header content on small screens */
+  #main-slideshow {
+      margin-top: 0px;
+  }
+  .swiper-container {
+      margin-top: 200px;
+      width: 100%;
+      padding: 4px;
+  }
+  h1 {
+      font-size: 2.5rem;
+  }
+  p.lead {
+      font-size: 1rem;
+  }
+  a.btn2 {
+      padding: 12px 25px;
+      font-size: 1rem;
+  }
+}
+
+
+
+/*----investment------*/
+
+@media (max-width: 768px) {
+  #prime-investment h2 {
+      font-size: 2.5rem;
+  }
+
+  #prime-investment p {
+      font-size: 1.2rem;
+  }
+
+  .grid {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .grid > div {
+      padding: 1.5rem;
+  }
+
+  .grid .text-3xl {
+      font-size: 2rem;
+  }
+
+  .inline-block {
+      padding: 12px 24px;
+      font-size: 1rem;
+  }
+}
+
+
+/*------what we offer-------*/
+
+
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    #grid-w .container {
+      padding: 0 20px; /* Add some padding for mobile */
+    }
+    
+    #grid-w h1 {
+      font-size: 2rem; /* Reduce title size on mobile */
+      margin-bottom: 16px;
+    }
+  
+    #grid-w .grid {
+      grid-template-columns: 1fr; /* Stack items vertically */
+    }
+  
+    #grid-w .flex {
+      flex-direction: column; /* Stack the icon and text vertically */
+      align-items: center;
+      gap: 12px; /* Add space between icon and text */
+    }
+  
+    #grid-w .w-16, #grid-w .h-16 {
+      width: 48px; /* Reduce icon size */
+      height: 48px;
+    }
+  
+    #grid-w .text-left {
+      font-size: 0.875rem; /* Shrink text size */
+      text-align: center; /* Center the text for mobile */
+      line-height: 1.5; /* Make text more readable */
+      margin-top: 8px; /* Add some margin for spacing */
+    }
+  }
+  
+}
+
+
+
+
+

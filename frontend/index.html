@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="src/img/" />
+    <link rel="stylesheet" href="fonts/remixicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <title>Prime Reserves</title>
+    <style>
+      /* Add the final CSS here */
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <!-- Header -->
+    <header class="bg-white py-4 px-6 sticky top-0 z-50 shadow-md">
+      <nav class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center" style="height: 4rem;">
+          <a aria-label="Home" href="index.html">
+            <img src="src/img/Group 14.png" alt="Logo" class="h-full" style="height: 50px; width: 50px;">
+          </a>
+        </div>
+    
+        <!-- Mobile Menu Toggle -->
+        <div class="lg:hidden flex items-center justify-end">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <div id="menu-container" class="hidden lg:flex lg:gap-10 mx-auto">
+          <a class="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-base text-gray-700 font-bold transition-colors delay-150 hover:text-green-700 hover:delay-0" href="index.html">
+            <span class="relative z-10">Home</span>
+          </a>
+          <a class="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-base text-gray-700 font-bold transition-colors delay-150 hover:text-green-700 hover:delay-0" href="/#our-company">
+            <span class="relative z-10">Our Company</span>
+          </a>
+          <a class="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-base text-gray-700 font-bold transition-colors delay-150 hover:text-green-700 hover:delay-0" href="/#investment">
+            <span class="relative z-10">Investment Plan</span>
+          </a>
+          <a class="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-base text-gray-700 font-bold transition-colors delay-150 hover:text-green-700 hover:delay-0" href="/#Contact">
+            <span class="relative z-10">Contact Us</span>
+          </a>
+        </div>
+    
+        <!-- Desktop Buttons -->
+        <div class="hidden lg:flex items-center gap-6">
+          <a class="inline-flex justify-center rounded-lg border py-1.5 px-3 text-sm font-bold transition-colors border-gray-300 text-gray-700 hover:bg-black hover:text-white hover:border-black active:bg-gray-100 active:text-gray-700/80" href="login.html">
+            Log in
+          </a>
+          <a class="inline-flex justify-center rounded-lg py-2 px-3 text-sm font-bold transition-colors bg-gray-800 text-white hover:bg-white hover:text-black active:bg-gray-800 active:text-white/80" href="register.html">
+            Sign up
+          </a>
+        </div>
+      </nav>
+    
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden hidden fixed top-16 left-0 right-0 bg-white bg-opacity-95 shadow-md z-50 w-full h-screen">
+        <div class="flex flex-col items-center gap-6 py-4 border-t-2 border-gray-300">
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="index.html">Home</a>
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="/#our-company">Our Company</a>
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="/#investment">Investment Plan</a>
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="/#Contact">Contact Us</a>
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="login.html">Log in</a>
+          <a class="text-base text-gray-700 font-bold transition-colors hover:text-green-700 w-full text-center py-2 border-b-2 border-gray-300" href="register.html">Sign up</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div id="main-slideshow" class="relative z-0">
+      <img src="./src/img/hi.jpg" alt="" class="w-full h-screen object-cover">
+      <div class="swiper-container absolute top-0 right-0 w-full md:w-1/2 h-full flex flex-col items-start justify-center p-4 md:p-8 z-10">
+        <div class="swiper-wrapper w-full">
+          <!-- Slide 1 -->
+          <div class="swiper-slide flex flex-col items-start text-black">
+            <h1 class="text-2xl md:text-4xl font-bold mb-3 md:mb-5 bg-gradient-to-r from-[#070337] to-[#FF1014]" style="background:linear-gradient(to right, #070337 0%, #FF1014 100%);  -webkit-background-clip: text; color: transparent;">
+              PRIME RESERVES
+            </h1>
+            <p class="text-lg md:text-xl">WHERE WE</p>
+            <p class="text-xl md:text-2xl font-medium text-[#814444]">COMBINE BUSINESS AND FINANCE</p>
+          </div>
+
+          <!-- Buttons for Register and Sign In -->
+          <div class="btn-group flex flex-col md:flex-row gap-3 md:gap-5 mt-6 md:mt-8" style="margin-bottom: 50px;">
+            <a href="register.html" class="btn2 register py-3 px-6 md:py-4 md:px-8 rounded-full text-base md:text-lg bg-[#ff5733] text-white transition duration-300 ease-in-out hover:bg-[#e74c3c] w-full md:w-[150px] text-center">Register</a>
+            <a href="login.html" class="btn2 sign-in py-3 px-6 md:py-4 md:px-8 rounded-full text-base md:text-lg bg-[#FF1014] text-white transition duration-300 ease-in-out hover:bg-[#fa7375] w-full md:w-[150px] text-center">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="text-center p-10" style="margin-top: 20px;">
+      <p class="text-sm font-medium text-gray-300 tracking-wide" style="text-align: center; font-size: larger;">
+        WELCOME TO THE SAFEST & RELIABLE INVESTMENT RESERVE
+        <span class="text-gray-400 text-xs" style="font-weight: 1000; font-size: large; margin-left: 10px;">❭❭❭</span>
+      </p>
+      <h1 class="mt-6 text-4xl font-bold text-white tracking-tight" style="font-weight: 800;">
+        TRADE & INVEST CRYPTO <br /> ON YOUR TERMS
+      </h1>
+      <p class="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+        Invest in <span class="underline">bitcoin</span>, <span class="underline">ethereum</span>, 
+        <span class="underline">USDT</span>, and other digital assets using our investment reserve ensuring better returns and regulatory oversight providing an additional layer of protection to investors.
+      </p>
+      <div class="mt-10 flex justify-center">
+        <img class="rounded-xl" style="border-radius: 30px;" src="./src/img/hgh.jpg" alt="Cryptocurrency coins" />
+      </div>
+    </div>
+
+    <!-- Investment Plans Section -->
+    <section id="investment" class="body">
+      <div class="container">
+        <h1>PRIME INVESTMENT PLANS</h1>
+        <div class="niac">
+          <!-- Beginners Plan -->
+          <div class="plan beginners">
+            <div>BEGINNERS<br> PLAN</div>
+            <div class="minimum">MINIMUM<br>$40</div>
+            <div>MAXIMUM<br> $500</div>
+            <div>3% DAILY PROFITS FOR 7 DAYS</div>
+            <a href="login.html"><button class="button">SIGN IN</button></a>
+          </div>
+
+          <!-- Elite Plan -->
+          <div class="plan elite">
+            <div>ELITE<br> PLAN</div>
+            <div>MINIMUM<br> $500</div>
+            <div>MAXIMUM<br> $1500</div>
+            <div>5% DAILY PROFITS FOR 7 DAYS</div>
+            <a href="login.html"><button class="button">SIGN IN</button></a>
+          </div>
+
+          <!-- Ambassador Plan -->
+          <div class="plan ambassador">
+            <div>AMBASSADOR<br> PLAN</div>
+            <div>MINIMUM<br> $1500</div>
+            <div>MAXIMUM<br> $3000</div>
+            <div>7% DAILY PROFITS FOR 7 DAYS</div>
+            <a href="login.html"><button class="button">SIGN IN</button></a>
+          </div>
+
+          <!-- Executive Plan -->
+          <div class="plan executive">
+            <div>EXECUTIVE<br> PLAN</div>
+            <div>MINIMUM<br> $3000</div>
+            <div>MAXIMUM<br> $7000</div>
+            <div>15% DAILY PROFITS FOR 7 DAYS</div>
+            <a href="login.html"><button class="button">SIGN IN</button></a>
+          </div>
+
+          <!-- Prime Plan -->
+          <div class="plan prime">
+            <div>PRIME<br> PLAN</div>
+            <div>MINIMUM<br> $7000</div>
+            <div>MAXIMUM<br> UNLIMITED</div>
+            <div>20% DAILY PROFITS FOR 7 DAYS</div>
+            <a href="login.html"><button class="button">SIGN IN</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referral Section -->
+    <div class="choba">
+      <div class="flee">
+        <h1><i class="ri-flashlight-fill"></i> GET 5% BONUS FROM YOUR REFERRALS</h1>
+      </div>
+      <div class="fahi">
+        <div class="tolu">
+          <img src="./src/img/c7e146ddc8870129cc69582ee6536959.jpg" alt="">
+        </div>
+        <div class="titi">
+          <img src="./src/img/123248a479ad0394fef8f4281e79f48e.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Offer Section -->
+    <section id="grid-w" class="bg-gray-900 text-white">
+      <div class="container mx-auto py-12 text-center mt-16">
+        <h1 class="text-4xl font-bold mb-8">WHAT WE OFFER</h1>
+        <div class="grid gap-8">
+          <!-- First Item -->
+          <div class="flex items-start space-x-4 mt-4">
+            <div class="flex-none">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center" style="background: linear-gradient(to bottom, #2B9FD0, #33A047); color: black;">
+                <i class="ri-team-line text-2xl"></i>
+              </div>
+            </div>
+            <div class="text-left">DIVERSIFICATION, EQUITY AND COLLABORATIONS, OFFERING VARIETIES ON MUTUAL FUNDS, PRIVATE EQUITIES AND VENTURE CAPITAL COMPANIES.</div>
+          </div>
+          <!-- Second Item -->
+          <div class="flex items-start space-x-4 mt-4">
+            <div class="flex-none">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center" style="background: linear-gradient(to bottom, #2B9FD0, #33A047); color: black;">
+                <i class="ri-shield-star-line text-black text-2xl"></i>
+              </div>
+            </div>
+            <div class="text-left">WE PROVIDE TRANSPARENCY ACROSS ALL INVESTMENTS, SAFETY ON ALL ASSETS, ACCOUNT INFORMATION, PRIVACY AND REGULATORY COMPLIANCE.</div>
+          </div>
+          <!-- Third Item -->
+          <div class="flex items-start space-x-4 mt-4">
+            <div class="flex-none">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center" style="background: linear-gradient(to bottom, #2B9FD0, #33A047); color: black;">
+                <i class="ri-numbers-line text-black text-2xl"></i>
+              </div>
+            </div>
+            <div class="text-left">INVESTMENT MANAGEMENT, FINANCIAL PLANNING, RETIREMENT RELATED SERVICES.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Company Section -->
+    <section id="our-company" class="bg-gray-900 text-white font-sans p-8">
+      <div class="max-w-4xl mx-auto px-6 py-10">
+        <h1 class="text-center text-3xl font-bold mb-5" style="margin-top: 50px;"> OUR COMPANY</h1>
+        <p class="text-justify leading-relaxed mb-6">
+          Founded by a group of investment enthusiasts driven by a common goal, to enhance their community and develop a reserve that aids profitability and security as the basic and major priority in 2016. Prime reserves provides diversification across so many countries, manage investments that yield good returns and reduced risk. Investment through digital currencies and assets have been initialised over the years.
+        </p>
+        <p class="text-justify leading-relaxed mb-6">
+          We are surrounded by group of professionals and trading analysts with long years of trading experience and in-depth knowledge of the blockchain technology, evaluating complex market data and trade recommendations to stakeholders and its investors.
+        </p>
+        <p class="text-justify leading-relaxed mb-8">
+          We prioritize our investors and community as we ensure transparency, profits, security, and reliability across our investment plans and trading expertise.
+        </p>
+        <div class="flex justify-center" style="margin-top: 20px; border-radius: 100px;">
+          <img src="./src/img/b9e49ead3228a0feb30f54a29c3872ea.jpg" alt="Prime Reserves Building" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <div class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+      <div class="max-w-3xl px-8 py-10">
+        <h1 class="text-4xl font-bold text-center mb-12 mt-10 tracking-wide">F A Q</h1>
+        <div class="space-y-8 text-start">
+          <div>
+            <h2 class="text-xl font-bold text-yellow-400 mb-3" style="color: #ffff0c;">How do I start?</h2>
+            <p class="text-lg text-start">Register an account with prime reserves, login and begin your investment journey.</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-yellow-400 mb-3" style="color: #ffff0c;">What are the investment process?</h2>
+            <p class="text-lg">
+              The plans are available for all, select your desired plan in cryptocurrency asset.
+              The amount invested will be converted at the current market exchange rate, and all transactions
+              will be shown on your prime reserves account.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-yellow-400 mb-3" style="color: #ffff0c;">How long will withdrawals be?</h2>
+            <p class="text-lg">
+              Withdrawals are processed instantly after you request for one provided that the time for the
+              investment circle has been completed.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-yellow-400 mb-3" style="color: #ffff0c;">Are my investments safe?</h2>
+            <p class="text-lg">
+              Prime reserves provides regular security audits, professional cybersecurity experts, and comprehensive
+              risk management systems across all accounts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <section id="Contact">
+      <div class="bg-gray-900 text-white font-sans p-8">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl font-bold mb-2">CONTACT US</h1>
+          <div class="w-16 mx-auto border-b border-gray-600"></div>
+        </div>
+        <p class="text-center text-lg mb-6">
+          If you have any question regarding our company or it’s services, kindly send us a message below and we will reply immediately, Thank you.
+        </p>
+        <div class="text-center mb-12">
+          <a href="support.html"><button class="jaza">Send Message</button></a>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold mb-2">CONTACT DETAILS</h2>
+          <p class="font-semibold">Our Office</p>
+          <div class="flex items-center mb-2">
+            <span class="mr-2">📍</span>
+            <p>2 Exeter Street, Spire Mews, Salisbury, England.</p>
+          </div>
+          <div class="flex items-center mb-4">
+            <span class="mr-2">✉️</span>
+            <p>support@primereserves.com</p>
+          </div>
+          <p class="text-sm">
+            Copyright © 2016 - 2017 Prime Reserves Limited
+          </p>
+          <div class="flex justify-between mt-4">
+            <a href="#" class="text-red-500 text-sm underline">Terms & Condition</a>
+            <a href="#" class="text-white text-sm underline">Frequently Asked Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      
+    </script>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/src/prime.js"></script>
+  </body>
+</html>

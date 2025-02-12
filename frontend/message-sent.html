@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/style.css">
+  <style>
+    .gradient-text {
+      background-image: linear-gradient(to right, #fd1418 100%, #000000 100%);
+      -webkit-background-clip: text; /* This makes sure the gradient is clipped to the text */
+      color: transparent; /* Makes the text itself transparent so the gradient can show */
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-white p-6 sm:p-10">
+  <!-- Logo Section -->
+  <div class="mb-8 flex flex-col items-start pl-4 sm:pl-0">
+    <img src="./src/img/Group 14.png" alt="Prime Reserves Logo" class="max-h-20 mb-2">
+  </div>
+
+  <!-- Support Section -->
+  <div class="flex items-start space-x-2 mb-2 pl-4 sm:pl-0">
+    <div class="w-6 h-6 flex items-center justify-center">
+     <img src="./src/img/vecteezy_a-woman-with-a-headset-on-her-face_49657430.png" alt="Support Icon">
+    </div>
+    <span class="text-base font-bold">SUPPORT</span>
+  </div>
+
+  <!-- Checkmark and Message Section -->
+  <div class="flex flex-col items-center p-4">
+    <!-- Checkmark Icon -->
+    <div class="w-12 h-12 mb-5 flex items-center justify-center rounded-full bg-black text-white font-bold">
+      <img src="./src/img/appro.png" alt="Checkmark Icon">
+    </div>
+
+    <!-- Success Message -->
+    <p class="text-base font-bold mb-1 gradient-text">Message sent successfully!</p>
+    <p class="text-center font-bold gradient-text">We will get back to you shortly. Thank You.</p>
+
+    <!-- Back to Support Button -->
+    <div class="mt-8">
+      <a
+        href="./support.html"
+        class="px-6 py-2 bg-gradient-to-r from-red-500 to-black text-white font-bold rounded-full hover:from-red-600 hover:to-gray-800 transition"
+      >
+        Back to Support
+      </a>
+    </div>
+  </div>
+</body>
+</html>

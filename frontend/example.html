@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Pending</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Remixicon for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-[#0b0b3d] pr-14 pl-14">
+
+    <!-- Updated Header -->
+    <header class="flex justify-between items-center p-4 bg-[#0c0c3e] mb-12">
+        <!-- Logo -->
+        <div>
+            <img src="./src/img/Group 14 white.png" alt="Logo" class="h-20">
+        </div>
+
+        <!-- SELECT PLAN Button -->
+        <div class="flex-1 flex justify-center">
+            <button class="text-xxl font-bold bg-gradient-to-r from-gray-500 to-gray-300 px-40 py-2 rounded-full">
+                SELECT PLAN
+            </button>
+        </div>
+
+        <!-- Menu Options -->
+        <div class="relative">
+            <button id="menu-options" class="text-3xl text-white">&#9776;</button>
+            <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
+                <a href="#" id="change-password-option" class="block px-4 py-2 hover:bg-gray-200">Change Password</a>
+                <a href="#" id="logout-button" class="block px-4 py-2 hover:bg-gray-200">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Reduced margin here -->
+    <div class="flex justify-end pr-2 mb-2 mr-12"> <!-- Adjusted margin-bottom to mb-2 -->
+        <button class="bg-gradient-to-r from-red-500 to-black text-white text-sm font-bold px-8 py-2 rounded-lg">Transaction History</button>
+    </div>
+
+    <!-- Centered message -->
+<!-- Centered message -->
+<div class="flex items-center justify-center min-h-screen">
+    <div class="bg-[#d9d9d950] text-white p-10 rounded-lg shadow-md w-[90%] max-w-[1200px]"> <!-- Set width to 90% of screen, max-width to 1200px -->
+        <div class="flex justify-center mb-8"> <!-- Increased margin-bottom to mb-8 -->
+            <div class="bg-white text-gray-700 rounded-full p-4"> <!-- Increased padding to p-4 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Increased icon size to h-10 w-10 -->
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+        </div>
+        <h2 class="text-3xl font-bold text-center mb-20 mt-9"> <!-- Increased font size to text-3xl -->
+            $100 WITHDRAWAL SUCCESSFUL
+        </h2>
+        <p class="text-center text-lg mt-6 mb-20"> <!-- Increased font size to text-lg and margin-top to mt-4 -->
+            The initiated amount is successfully withdrawn to the provided wallet address, thank you for investing with Prime Reserves.
+        </p>
+
+        <div class="mt-14 flex justify-center"> <!-- Increased margin-top to mt-10 -->
+            <button class="bg-gradient-to-r from-red-500 to-black hover:bg-red-700 text-white py-2 px-14 rounded-lg font-semibold"> <!-- Increased padding to py-4 px-10 -->
+                DASHBOARD
+            </button>
+        </div>
+    </div>
+</div>
+
+
+    
+    <!-- Reduced margin here too -->
+    <p class="text-s text-gray-300 text-center italic mb-6">Transactions undergo confirmations once initiated successfully and will reflect upon completion</p> <!-- Reduced mt-4 to mt-1 -->
+
+    <!-- JavaScript for Dropdown and Modal -->
+    <script>
+        // Toggle dropdown menu
+        document.getElementById('menu-options').addEventListener('click', function() {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Show change password modal
+        document.getElementById('change-password-option').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('change-password').classList.remove('hidden');
+        });
+
+        // Close change password modal
+        document.getElementById('close-password-icon').addEventListener('click', function() {
+            document.getElementById('change-password').classList.add('hidden');
+        });
+
+        // Toggle password visibility
+        const togglePassword = (inputId, eyeIconId) => {
+            const passwordInput = document.getElementById(inputId);
+            const eyeIcon = document.getElementById(eyeIconId);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.replace('ri-eye-off-line', 'ri-eye-line');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.replace('ri-eye-line', 'ri-eye-off-line');
+            }
+        };
+
+        document.getElementById('toggle-old-password').addEventListener('click', () => {
+            togglePassword('old-password', 'old-eye-icon');
+        });
+
+        document.getElementById('toggle-new-password').addEventListener('click', () => {
+            togglePassword('new-password', 'new-eye-icon');
+        });
+
+        document.getElementById('toggle-confirm-password').addEventListener('click', () => {
+            togglePassword('confirm-password', 'confirm-eye-icon');
+        });
+
+        document.getElementById("logout-button").addEventListener("click", function () {
+            window.location.href = "index.html"; // Change "index.html" to your actual landing page URL
+        });
+    </script>
+</body>
+</html>
