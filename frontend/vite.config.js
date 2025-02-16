@@ -1,12 +1,13 @@
-export default {
-    server: {
-      proxy: {
-        '/api': {
-          target: 'http://localhost:5000', // Ensure it includes the protocol
-          changeOrigin: true, // Needed for virtual hosted sites
-          secure: false, // Set to false if the backend is not using HTTPS
-        },
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000', // Your backend server
+        changeOrigin: true,
+        // No need to rewrite the path since the backend already expects '/api/'
       },
     },
-  };
-  
+  },
+});

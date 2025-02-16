@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link href="./src/style.css" rel="stylesheet"> <!-- Link your CSS file -->
+  <link href="./src/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-900">
@@ -13,25 +13,31 @@
       <img src="./src/img/Group 14.png" alt="Prime Reserves Logo" class="w-16 mb-6 mt-8">
       <h1 class="text-xl md:text-2xl font-bold text-gray-800">WELCOME BACK !</h1>
     </div>
-    <form>
+    
+    <!-- LOGIN FORM -->
+    <form id="login-form">
       <div class="mb-4">
-        <label for="email" class="block text-gray-700 font-medium">Email or Username</label>
+        <label for="login-input" class="block text-gray-700 font-medium">Email or Username</label>
         <input 
-          id="email" 
+          id="login-input" 
+          name="login-input"
           type="text" 
-          aria-label="Email or Username" 
           placeholder="Enter your email or username" 
-          class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:border-black" style="background-color: #d9d9d9;">
+          class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:border-black"
+          style="background-color: #d9d9d9;" required>
       </div>
+
       <div class="mb-4">
         <label for="password" class="block text-gray-700 font-medium">Password</label>
         <input 
           id="password" 
+          name="password"
           type="password" 
-          aria-label="Password" 
           placeholder="Enter your password" 
-          class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2  focus:border-black" style="background-color: #d9d9d9;">
+          class="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:border-black"
+          style="background-color: #d9d9d9;" required>
       </div>
+
       <div class="flex items-center justify-between mb-6">
         <label class="inline-flex items-center">
           <input type="checkbox" class="form-checkbox text-red-500">
@@ -39,51 +45,31 @@
         </label>
         <a href="#" class="text-red-500 hover:underline text-sm">Forgot Password</a>
       </div>
+
       <div class="flex justify-center mb-6">
         <button 
-            type="submit" 
-            id="login-button" 
-            class="w-3/4 py-3 text-white bg-gradient-to-r from-red-500 to-black rounded-md hover:opacity-90 transition-opacity flex items-center justify-center" 
-            style="border-radius: 50px;">
-            <span id="login-spinner" class="hidden mr-2">
-                <i class="ri-loader-2-line animate-spin"></i>
-            </span>
-            <span id="login-text">LOGIN</span>
+          type="submit" 
+          name="submit"
+          id="login-button" 
+          class="w-3/4 py-3 text-white bg-gradient-to-r from-red-500 to-black rounded-md hover:opacity-90 transition-opacity flex items-center justify-center"
+          style="border-radius: 50px;">
+          <span id="login-spinner" class="hidden mr-2">
+            <i class="ri-loader-2-line animate-spin"></i>
+          </span>
+          <span id="login-text">LOGIN</span>
         </button>
-    </div>
+      </div>
     </form>
+
     <p class="mt-6 text-center text-gray-700 text-sm mb-8">
       Don’t have an account? <a href="register.html" class="text-red-500 hover:underline">Sign up for free</a>
     </p>
   </div>
 
-
-
-
-  <script>
-    document.querySelector('form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent the form from submitting immediately
-
-        const loginButton = document.getElementById('login-button');
-        const loginSpinner = document.getElementById('login-spinner');
-        const loginText = document.getElementById('login-text');
-
-        // Show spinner and update button text
-        loginText.textContent = 'Logging in...';
-        loginSpinner.classList.remove('hidden');
-
-        // Simulate login process (replace with actual login logic)
-        setTimeout(() => {
-            // Reset button after login process
-            loginText.textContent = 'LOGIN';
-            loginSpinner.classList.add('hidden');
-
-            // Redirect or show success message
-            window.location.href = '/dashboard.html'; // Replace with your desired URL
-        }, 3000); // Simulate a 3-second delay
-    });
-</script>
-
+  <!-- Link JavaScript -->
+  {#  <script type="module" src="./main.js"></script>  #}
+  <script type="module" src="./src/api/login.js"></script>
 
 </body>
 </html>
+
