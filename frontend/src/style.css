@@ -20,75 +20,16 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-#menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
+/* CSS for Mobile Menu Transition */
 #mobile-menu {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 60px; /* Adjust based on header height */
-  left: 0;
-  right: 0;
-  background-color: white;
-  z-index: 999;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: calc(100vh - 60px); /* Full height minus header */
-  overflow-y: auto; /* Enable scrolling if content overflows */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
 }
 
 #mobile-menu.show {
-  display: block; /* Show when toggled */
+  transform: translateX(0);
 }
 
-#mobile-menu a {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #333;
-  border-bottom: 1px solid #eee;
-}
-
-#mobile-menu a:hover {
-  background-color: #f9f9f9;
-}
-
-/* Toggle Icons */
-#menu-icon {
-  display: block; /* Show menu icon by default */
-}
-
-#close-icon {
-  display: none; /* Hide close icon by default */
-}
-
-#menu-toggle.active #menu-icon {
-  display: none; /* Hide menu icon when active */
-}
-
-#menu-toggle.active #close-icon {
-  display: block; /* Show close icon when active */
-}
 
 
 
@@ -100,34 +41,17 @@
 
 
 /* Styling for the main slideshow */
+
+/* Hero Section Styles */
+body, html {
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  margin: 0;
+}
+
 #main-slideshow {
   position: relative;
   width: 100%;
-  height: 100%; /* Full viewport height */
-  overflow: hidden;
-}
-
-
-
-
-.background-clip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Styling for the Swiper container */
-/* Adjust the position of the text and button */
-  /* Styling for the main slideshow */
-/* Styling for the main slideshow */
-/* Styling for the main slideshow */
-#main-slideshow {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -142,21 +66,22 @@
 
 /* Styling for the Swiper container */
 .swiper-container {
-  margin-top: 0; /* Remove the top margin */
+  margin-top: 0;
   position: absolute;
-  top: 0; /* Keep the container at the top */
-  right: 0; /* Keep the container on the right */
-  width: 50%; /* Take half the width of the screen */
+  top: 0;
+  right: 0;
+  width: 100%; /* Make the container full-width on mobile */
   height: 100%;
   display: flex;
-  flex-direction: column; /* Vertically arrange text */
-  align-items: flex-start; /* Align content to the left of the container */
-  justify-content: flex-start; /* Align content to the top */
-  text-align: left; /* Align text to the left */
-  z-index: 1; /* Ensure it is on top of the background image */
-  padding: 30px;
+  flex-direction: column;
+  align-items: center; /* Center content */
+  justify-content: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  z-index: 1;
+  padding: 20px; /* Padding for mobile */
 }
 
+/* Adjust text and button styles for mobile */
 .swiper-wrapper {
   width: 100%;
 }
@@ -164,39 +89,12 @@
 .swiper-slide {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align the text to the left */
+  align-items: flex-start; /* Align text to the left */
   color: #000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  margin-top: 70px; /* Bring the text and buttons down a bit */
-}
-
-h1.fw-bold {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #070337 0%, #FF1014 100%);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-p {
-  padding: 10px;
-}
-
-p.zoe {
-  font-size: 1.5rem;
-}
-
-p.leo {
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #814444;
-}
-
-p.lead {
-  font-size: 1.25rem;
-  margin-bottom: 50px;
-  color: #ffffff;
+  margin-top: 0; /* Remove top margin for better alignment on mobile */
+  padding-left: 20px; /* Optional: Add some padding to push the text left a bit */
+  text-align: left; /* Align text to the left */
 }
 
 /* Styling for Button Group */
@@ -241,35 +139,112 @@ i.ri-flashlight-line {
   font-size: 1.5rem;
 }
 
-/* Responsive Adjustments for Mobile */
+/* For Mobile view */
 @media (max-width: 768px) {
-  .swiper-slide {
-    margin-top: -10px; /* Bring the text and buttons down further for mobile */
+  /* Adjust header text */
+  .swiper-slide h1 {
+    font-size: 2rem; /* Smaller heading */
+    margin-bottom: 10px; /* Reduced space below heading */
+    margin-top: -200px; /* Move h1 closer to the top */
   }
 
-  h1.fw-bold {
-    font-size: 2rem; /* Smaller font size for mobile */
+  /* Move the swiper-container up */
+  .swiper-container {
+    padding-top: 0; /* Reduce top padding */
+  }
+  
+  .swiper-slide p {
+    font-size: 1.2rem; /* Adjust paragraph text */
   }
 
-  p.zoe {
-    font-size: 1.2rem; /* Smaller font size for mobile */
-  }
-
-  p.leo {
-    font-size: 1.5rem; /* Smaller font size for mobile */
-  }
-
+  /* Style for buttons */
   .btn-group {
-    flex-direction: column; /* Stack buttons vertically on mobile */
-    gap: 10px; /* Reduce space between buttons */
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 15px; /* Add spacing between buttons */
+    margin-top: 10px; /* Reduced space between text and buttons */
+    margin-left: 50px;
   }
 
-  a.btn2 {
-    width: 100%; /* Full-width buttons on mobile */
+  .btn2 {
+    width: auto; /* Buttons will no longer be full width */
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn2.register {
+    background-color: #ff5733; /* Register button color */
+  }
+
+  .btn2.sign-in {
+    background-color: #FF1014; /* Sign-in button color */
+  }
+
+  .btn2:hover {
+    background-color: #e74c3c; /* Hover effect */
   }
 }
 
 
+
+
+
+
+
+
+h1.fw-bold {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #070337 0%, #FF1014 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+p {
+  padding: 10px;
+}
+
+p.zoe {
+  font-size: 1.5rem;
+}
+
+p.leo {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #814444;
+}
+
+p.lead {
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+
+
+
+
+/* Desktop Fixed Header */
+@media (min-width: 769px) {
+  .header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Make sure header stays on top */
+    background-color: white; /* Ensure white background for visibility */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to separate it from content */
+  }
+
+  /* Adjust menu container if necessary */
+  #menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 
 
@@ -279,41 +254,72 @@ i.ri-flashlight-line {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-  /* Adjust header content on small screens */
-  .header {
-    position: fixed; /* Make sure the header is fixed on mobile */
-    z-index: 100; /* Ensure the header stays on top */
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  h1.fw-bold {
-    font-size: 2.5rem;
-  }
-
-  p.lead {
-    font-size: 1rem;
-  }
-
-  a.btn2 {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-
-  #main-slideshow {
-    margin-top: 80px; /* Add space for the fixed header on mobile */
-  }
-
-  /* Ensure mobile menu is hidden by default */
+  /* Hide the menu by default */
   #mobile-menu {
     display: none;
   }
 
+  /* Show the mobile menu when toggled */
   #mobile-menu.show {
     display: block;
   }
+
+  /* Mobile Menu Styling */
+  #mobile-menu {
+    position: fixed; /* Fixed at the top */
+    top: 64px; /* Adjust to be just below the header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: calc(100vh - 64px); /* Full screen minus header height */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: none;
+  }
+
+  /* Links inside mobile menu */
+  #mobile-menu a {
+    text-align: center;
+    display: block;
+    padding: 16px 0;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+
+  /* Hover effect for mobile menu links */
+  #mobile-menu a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Toggle Button */
+  #menu-toggle {
+    cursor: pointer;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  #close-icon {
+    display: none;
+  }
+
+  /* When menu is open, toggle icons */
+  #mobile-menu.show + #menu-toggle #menu-icon {
+    display: none;
+  }
+
+  #mobile-menu.show + #menu-toggle #close-icon {
+    display: block;
+  }
 }
+
 /*--------section--------*/
 
 .body {
@@ -387,41 +393,90 @@ h1 {
   color: #000;
 }
 
+
+
  /* Mobile view */
+
  @media (max-width: 768px) {
-  h1 {
-    font-size: 1.3rem; /* Smaller title */
-    margin-bottom: 15px;
+  /* Move the entire section down */
+  .body {
+    margin-top: 500px; /* Adjust this value to move it down more */
   }
 
+  /* Adjust the niac container to display plans vertically */
   .niac {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 15px; /* Increased gap between plans */
+    display: flex;
+    flex-direction: column; /* Stack the plans vertically */
+    gap: 20px; /* Add space between the plans */
   }
 
+  /* Make each plan take up full width on mobile */
   .plan {
-    padding: 10px;
-    margin: 5px 0;
+    flex: 1 1 100%; /* Take up full width */
+    padding: 15px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-size: 1rem; /* Adjust font size */
+    margin-bottom: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically inside each plan */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
   }
 
+  /* Plan content layout */
   .plan > div {
-    font-size: 0.9rem; /* Reduced font size for better fit */
-    margin-bottom: 8px;
+    margin: 5px 0; /* Add space between the lines */
+    font-weight: bold;
   }
 
+  /* Adjust background colors for each plan */
+  .beginners {
+    background: linear-gradient(to right, #e6e6e6, #ffffff);
+  }
+
+  .elite {
+    background: linear-gradient(to right, #ccddee, #e6f0ff);
+  }
+
+  .ambassador {
+    background: linear-gradient(to right, #f7f6c4, #ffffe0);
+  }
+
+  .executive {
+    background: linear-gradient(to right, #f5ccf0, #ffebff);
+  }
+
+  .prime {
+    background: linear-gradient(to right, #c8f7c5, #e0ffe0);
+  }
+
+  /* Button styles for mobile */
   .button {
-    padding: 8px 20px; /* Smaller buttons */
-    font-size: 0.9rem;
-    margin-top: 12px;
+    padding: 12px 25px;
+    width: auto; /* Adjust width of button */
+    margin-top: 10px; /* Add space between the details and button */
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto; /* Center button horizontally */
+  }
+
+  .button:hover {
+    background-color: #fff;
+    color: #000;
   }
 }
 
-/* Tablet and larger screens */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .niac {
-    grid-template-columns: 1fr 1fr; /* Two columns */
-  }
-}
+
+
+
 
 /* Desktop and larger screens */
 @media (min-width: 1025px) {
@@ -476,27 +531,20 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .fahi {
-    gap: 0.8rem; /* Tighter gap for smaller screens */
+  .choba {
+    margin-top: 600px; /* Increased margin to move it down further on mobile */
   }
-  
+
+  /* Optional: Adjust padding or any other styles you want for mobile */
   .flee h1 {
-    font-size: clamp(1rem, 3vw, 1.8rem); /* Smaller font for mobile */
+    font-size: clamp(1.4rem, 4vw, 2rem); /* Responsive font size for mobile */
   }
-}
 
-@media (max-width: 768px) {
   .fahi {
-    gap: 1rem; /* Adjust gap for larger images */
+    margin-top: 20px; /* Adjust spacing between images if needed */
   }
 }
 
-@media (max-width: 480px) {
-  .fahi img {
-    width: 85%; /* Slightly larger for small screens */
-    height: auto;
-  }
-}
 
 
 /* Add this CSS to your stylesheet */
