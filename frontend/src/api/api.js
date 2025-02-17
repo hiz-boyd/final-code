@@ -1,6 +1,6 @@
 const apiRequest = async (endpoint, data) => {
     try {
-      console.log('Making API request to:', endpoint); // Log the full endpoint
+      console.log('Making API request to:', endpoint);
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {

@@ -14,7 +14,7 @@ class LoginSerializer(serializers.Serializer):
         username_or_email = data.get("username_or_email")
         password = data.get("password")
 
-        # to check if user exists already
+        
         user = User.objects.filter(email=username_or_email).first() or \
                User.objects.filter(username=username_or_email).first()
 
