@@ -15,7 +15,7 @@ export default defineConfig({
     allowedHosts: ['final-code-ianu.onrender.com'], // Allow Render's domain
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'https://prime-backend-g57x.onrender.com',
         changeOrigin: true,
       },
     },
