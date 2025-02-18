@@ -31,7 +31,7 @@ const handleRegister = async (event) => {
   }
 };
 
-// Attach the event listener to the registration form
+
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
   registerForm.addEventListener('submit', handleRegister);
@@ -39,3 +39,39 @@ if (registerForm) {
 } else {
   console.error('Register form not found');
 }
+
+
+
+
+
+// const registerForm = document.getElementById('register-form');
+
+// if (registerForm) {
+//   registerForm.addEventListener('submit', handleRegister);
+//   console.log('Event listener attached to the form');
+// } else {
+//   console.error('Register form not found');
+// }
+
+// function handleRegister(event) {
+//   event.preventDefault(); // Prevent default form submission
+
+ 
+//   const submitButton = event.target.querySelector('button[type="submit"]');
+//   const buttonText = submitButton.querySelector('.button-text');
+//   const buttonSpinner = submitButton.querySelector('.button-spinner');
+
+//   if (buttonText && buttonSpinner) {
+    
+//     buttonText.textContent = 'Processing...';
+//     buttonSpinner.classList.remove('hidden');
+//   } else {
+//     console.error('Button text or spinner not found');
+//   }
+
+
+//   setTimeout(() => {
+//     buttonText.textContent = 'Register';
+//     buttonSpinner.classList.add('hidden');
+//   }, 2000);
+// }
