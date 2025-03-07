@@ -25,6 +25,12 @@ class LoginSerializer(serializers.Serializer):
         return data
     
 
+class DashboardSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.username')
+
+    class Meta:
+        model = Profile
+        fields = ['username', 'total_balance', 'income', 'outcome', 'total_deposits', 'total_profits', 'referrals']
 
 
 

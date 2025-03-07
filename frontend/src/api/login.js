@@ -1,4 +1,4 @@
-
+// login.js
 import { login } from './api.js'; // Import the login function from api.js
 
 const handleLogin = async (event) => {
@@ -17,7 +17,7 @@ const handleLogin = async (event) => {
   const usernameOrEmail = formData.get('login-input'); // Retrieve email/username
   const password = formData.get('password'); // Retrieve password
 
-  console.log('Login input:', usernameOrEmail); // Debugging: Check the value of loginInput
+  console.log('Login input:', usernameOrEmail); // Debugging
 
   // Validate login input
   if (!usernameOrEmail || !password) {
@@ -29,7 +29,7 @@ const handleLogin = async (event) => {
 
   // Prepare the payload for the backend
   const credentials = {
-    username_or_email: usernameOrEmail, // Match the backend's expected field name
+    username_or_email: usernameOrEmail, // Match backend field name
     password: password,
   };
 
@@ -37,15 +37,14 @@ const handleLogin = async (event) => {
 
   try {
     console.log('Calling login API...');
-    const response = await login(credentials); // Use the login function from api.js
+    const response = await login(credentials); // Use the login function
     console.log('Login successful:', response);
 
-    // Store the authentication token (modify based on your backend response)
-    if (response.token) {
-      localStorage.setItem('authToken', response.token);
-    }
+    // Debugging: Check localStorage for tokens
+    console.log('Access token:', localStorage.getItem('access_token'));
+    console.log('Refresh token:', localStorage.getItem('refresh_token'));
 
-    // Redirect to dashboard or home page
+    // Redirect to dashboard
     window.location.href = '/dashboard.html';
   } catch (error) {
     console.error('Login failed:', error);

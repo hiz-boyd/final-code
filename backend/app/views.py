@@ -1,17 +1,52 @@
-
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
-from .serializers import RegisterSerializer, LoginSerializer
+from .models import Profile
+from .serializers import RegisterSerializer, LoginSerializer, DashboardSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import login
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import get_user_model
+import logging
+
+
+class DashboardView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+
+    def get(self, request):
+        user = request.user
+        try:
+            profile = Profile.objects.get(user=user)
+            serializer = DashboardSerializer(profile)
+            return Response({
+                "message": f"Welcome to the dashboard, {user.username}!",
+                "data": serializer.data
+            }, status=status.HTTP_200_OK)
+        except Profile.DoesNotExist:
+            return Response({
+                "message": "Profile not found",
+                "data": {
+                    "username": user.username,
+                    "total_balance": "0.00",
+                    "income": "0.00",
+                    "outcome": "0.00",
+                    "total_deposits": "0.00",
+                    "total_profits": "0.00",
+                    "referrals": 0,
+                    "full_name": f"{user.first_name} {user.last_name}".strip() or user.username,
+                }
+            }, status=status.HTTP_200_OK)
 
 
 class LogoutView(APIView):
+
+    permission_classes = [IsAuthenticated]  # Ensure only authenticated users can log out
     def post(self, request):
         refresh_token = request.COOKIES.get("refresh_token")
         response = Response({"message": "Logout Successful!"}, status=status.HTTP_200_OK)
@@ -102,3 +137,42 @@ def getRoutes(request):
     ]
 
     return Response(routes)
+
+
+
+logger = logging.getLogger(__name__)
+
+
+class UserDataView(APIView):
+    permission_classes = [IsAuthenticated]  # Ensure only authenticated users can access this endpoint
+
+    def get(self, request):
+        try:
+            # Fetch the authenticated user
+            user = request.user
+            logger.info(f"Fetching data for user: {user.username}")
+
+            # Fetch the user's profile
+            profile = Profile.objects.get(user=user)
+            logger.info(f"Profile found for user: {user.username}")
+
+            # Prepare the response data
+            data = {
+                "total_balance": profile.total_balance,
+                "income": profile.income,
+                "outcome": profile.outcome,
+                "total_deposits": profile.total_deposits,
+                "total_profits": profile.total_profits,
+                "referrals": profile.referrals,
+                "full_name": f"{user.first_name} {user.last_name}".strip() or user.username,
+            }
+
+            logger.info(f"User data fetched successfully: {data}")
+            return Response(data, status=status.HTTP_200_OK)
+
+        except Profile.DoesNotExist:
+            logger.error(f"Profile not found for user: {user.username}")
+            return Response({"error": "User profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.error(f"Error fetching user data: {str(e)}")
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
