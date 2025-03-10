@@ -22,9 +22,14 @@
                 font-size: 1.25rem; /* Reduce from text-2xl */
                 margin-bottom: 1.5rem; /* Reduce from mb-10 */
             }
-            .mobile-grid {
-                gap: 1rem; /* Reduce from gap-10 */
+            .mobile-form-container {
                 margin: 0.5rem; /* Reduce from m-8 */
+                display: grid; /* Add grid for mobile */
+                grid-template-columns: 1fr; /* Single column for mobile */
+                gap: 0.5rem; /* Spacing between grid items */
+            }
+            .mobile-form-container label {
+                margin-bottom: 0.5rem; /* Add gap between label and input */
             }
             .mobile-input {
                 height: 2.5rem; /* Override 7vh */
@@ -54,7 +59,7 @@
         </div>
         <h1 class="text-2xl font-bold text-center mb-10 mobile-title">CREATE NEW ACCOUNT</h1>
         <form id="register-form">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 m-8 mobile-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 m-8 mobile-form-container">
                 <div>
                     <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
                     <input type="text" id="first-name" name="first-name" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm mobile-input" style="height: 7vh; background-color: #d9d9d9; border-radius: 50px;">
@@ -101,7 +106,8 @@
                         <option value="BJ">Benin</option>
                         <option value="BM">Bermuda</option>
                         <option value="BT">Bhutan</option>
-                        <option value="BO">Bolivia</option>
+                        <option value="BO">Bolivia, Plurinational State of</option>
+                        <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
                         <option value="BA">Bosnia and Herzegovina</option>
                         <option value="BW">Botswana</option>
                         <option value="BV">Bouvet Island</option>
@@ -111,10 +117,10 @@
                         <option value="BG">Bulgaria</option>
                         <option value="BF">Burkina Faso</option>
                         <option value="BI">Burundi</option>
+                        <option value="CV">Cabo Verde</option>
                         <option value="KH">Cambodia</option>
                         <option value="CM">Cameroon</option>
                         <option value="CA">Canada</option>
-                        <option value="CV">Cape Verde</option>
                         <option value="KY">Cayman Islands</option>
                         <option value="CF">Central African Republic</option>
                         <option value="TD">Chad</option>
@@ -125,7 +131,7 @@
                         <option value="CO">Colombia</option>
                         <option value="KM">Comoros</option>
                         <option value="CG">Congo</option>
-                        <option value="CD">Congo, the Democratic Republic of the</option>
+                        <option value="CD">Congo, Democratic Republic of the</option>
                         <option value="CK">Cook Islands</option>
                         <option value="CR">Costa Rica</option>
                         <option value="CI">Côte d'Ivoire</option>
@@ -133,7 +139,7 @@
                         <option value="CU">Cuba</option>
                         <option value="CW">Curaçao</option>
                         <option value="CY">Cyprus</option>
-                        <option value="CZ">Czech Republic</option>
+                        <option value="CZ">Czechia</option>
                         <option value="DK">Denmark</option>
                         <option value="DJ">Djibouti</option>
                         <option value="DM">Dominica</option>
@@ -144,6 +150,7 @@
                         <option value="GQ">Equatorial Guinea</option>
                         <option value="ER">Eritrea</option>
                         <option value="EE">Estonia</option>
+                        <option value="SZ">Eswatini</option>
                         <option value="ET">Ethiopia</option>
                         <option value="FK">Falkland Islands (Malvinas)</option>
                         <option value="FO">Faroe Islands</option>
@@ -171,7 +178,7 @@
                         <option value="GY">Guyana</option>
                         <option value="HT">Haiti</option>
                         <option value="HM">Heard Island and McDonald Islands</option>
-                        <option value="VA">Holy See (Vatican City State)</option>
+                        <option value="VA">Holy See</option>
                         <option value="HN">Honduras</option>
                         <option value="HK">Hong Kong</option>
                         <option value="HU">Hungary</option>
@@ -205,7 +212,6 @@
                         <option value="LT">Lithuania</option>
                         <option value="LU">Luxembourg</option>
                         <option value="MO">Macao</option>
-                        <option value="MK">Macedonia, the former Yugoslav Republic of</option>
                         <option value="MG">Madagascar</option>
                         <option value="MW">Malawi</option>
                         <option value="MY">Malaysia</option>
@@ -287,7 +293,6 @@
                         <option value="SD">Sudan</option>
                         <option value="SR">Suriname</option>
                         <option value="SJ">Svalbard and Jan Mayen</option>
-                        <option value="SZ">Swaziland</option>
                         <option value="SE">Sweden</option>
                         <option value="CH">Switzerland</option>
                         <option value="SY">Syrian Arab Republic</option>
