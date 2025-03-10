@@ -98,8 +98,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'final.wsgi.application'
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'final.settings')
-# application = get_wsgi_application()
+
 
 
 # Database
